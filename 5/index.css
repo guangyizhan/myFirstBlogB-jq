@@ -1,0 +1,954 @@
+@charset 'utf-8';
+body {
+	margin:0;
+	padding: 0;
+	background: none;
+	font-size: 12px;
+	color: #333;
+}
+ul,dl,dd,h2,p,form {
+	padding:0;
+	margin:0;
+}
+ul li {
+	list-style: none;
+}
+#header_bg {
+	width: 100%;
+	background: url(images/header_bg.png)repeat-x;
+}
+#header {
+	width:900px;
+	height: 30px;
+	margin:0 auto;
+}
+#header .logo {
+	width:100px;
+	height:30px;
+	float: left;
+}
+#header .logo img {
+	display: block;
+}
+#header .member {
+	width:70px;
+	height:30px;
+	line-height: 30px;
+	float:right;
+	background:url(images/arrow.png)no-repeat 55px center;
+	cursor:pointer;
+	position: relative;
+}
+#header ul {
+	position: absolute;
+	top:30px;
+	left:-20px;
+	background: #FBF7E1;
+	width: 100px;
+	height:0;
+	border: 1px solid #999;
+	border-top:none;
+	padding: 10px 0 0 0 ;
+	display: none;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	overflow: hidden;
+}
+#header ul li {
+	height:25px;
+	line-height: 25px;
+	text-indent: 20px;
+	letter-spacing: 1px;
+}
+#header ul li a {
+	display: block;
+	text-decoration: none;
+	color:#333;
+	background: url(images/arrow3.gif)no-repeat 5px 45%;
+}
+#header ul li a:hover {
+	background: #fc0 url(images/arrow4.gif)no-repeat 5px 45%;;
+}
+#header .login,#header .reg,#header .info {
+	float: right;
+	width: 35px;
+	height:30px;
+	line-height: 30px;
+	cursor:pointer;
+}
+#header .info {
+	width:80px;
+	display:none;
+}
+#screen {
+	position: absolute;
+	top:0;
+	left:0;
+	z-index:9998;
+	background: #000;
+	filter: alpha(opacity = 0);
+	opacity: 0;
+	display: none;
+}
+#login {
+	width:350px;
+	height:250px;
+	border:1px solid #ccc;
+	position: absolute;
+	display: none;
+	z-index:9999;
+	background: #fff;
+}
+#login h2{
+	height:40px;
+	line-height: 40px;
+	text-align: center;
+	font-size: 14px;
+	letter-spacing: 1px;
+	color:#666;
+	background:url(images/login_header.png)repeat-x;
+	margin: 0;
+	padding: 0;
+	border-bottom: 1px solid #ccc;
+	cursor:move;
+}
+#login h2 img {
+	float:right;
+	position: relative;
+	top:14px;
+	right:8px;
+	cursor: pointer;
+}
+#login div.info {
+	padding:15px 0 5px 0;
+	color:maroon;
+	text-align:center;
+}
+#login div.user,#login div.pass {
+	font-size: 14px;
+	color: #666;
+	padding: 5px 0;
+	text-align: center;
+}
+#login input.text {
+	text-indent: 3px;
+	width:200px;
+	height:25px;
+	border:1px solid #ccc;
+	background: #fff;
+	font-size: 14px;
+}
+#login .button {
+	text-align: center;
+	padding: 15px 0;
+}
+#login input.submit {
+	width:107px;
+	height:30px;
+	background: url(images/login_button.png)no-repeat;
+	border: none;
+	cursor:pointer;
+}
+#login .other {
+	text-align:right;
+	padding: 15px 10px;
+	color: #666;
+	cursor:pointer;
+}
+#reg {
+	width:600px;
+	height:550px;
+	border:1px solid #ccc;
+	position: absolute;
+	z-index:9999;
+	background: #fff;
+	display: none;
+}
+#reg h2{
+	height:40px;
+	line-height: 40px;
+	text-align: center;
+	font-size: 14px;
+	letter-spacing: 1px;
+	color:#666;
+	background:url(images/login_header.png)repeat-x;
+	margin: 0;
+	padding: 0;
+	border-bottom: 1px solid #ccc;
+	margin:0 0 20px 0;
+	cursor:move;
+}
+#reg h2 img {
+	float:right;
+	position: relative;
+	top:14px;
+	right:8px;
+	cursor: pointer;
+}
+#reg dl {
+	margin: 20px;
+	font-size: 14px;
+	color: #666;
+	padding: 0 0 0 10px;
+	position: relative;
+}
+#reg dl dd {
+	height: 30px;
+	padding: 5px 0;
+}
+#reg dl dd input, #reg dl dd select {
+	width:200px;
+	height:25px;
+	border:1px solid #ccc;
+	background:#fff;
+	font-size:14px;
+	color:#666;
+}
+#reg dl dd select {
+	width:202px;
+ }
+#reg dl dd.birthday select {
+	width:70px;
+}
+#reg dl dd textarea {
+	border:1px solid #ccc;
+	width:360px;
+	height:100px;
+	background:#fff;
+}
+#reg dl dd input.submit {
+	width:143px;
+	height:33px;
+	background:url(images/reg.png) no-repeat;
+	border:none;
+	cursor:pointer;
+	margin:0 auto;
+}
+#reg dl dd span.info, #reg dl dd span.error,#reg dl dd span.succ{
+	width: 165px;
+	height: 32px;
+	line-height: 32px;
+	font-size: 12px;
+	letter-spacing: 1px;
+	padding: 0 0 0 35px;
+	position: absolute;
+	display: none;
+}
+#reg dl dd span.info {
+	background:url(images/reg_info.png) no-repeat;
+	color:#333;
+}
+#reg dl dd span.error {
+	background:url(images/reg_error.png) no-repeat;
+	color:red;
+	z-index:2;
+}
+#reg dl dd span.succ {
+	line-height:14px;
+	padding:0 0 0 20px;
+	background:url(images/reg_succ.png) no-repeat;
+	color:green;
+}
+#reg dl dd span.loading {
+	background:url(images/loading2.gif) no-repeat;
+	position:absolute;
+	top:10px;
+	left:300px;
+	padding:1px 0 0 0;
+	text-indent: 22px;
+	font-size: 12px;
+	display:none;
+}
+#reg dl dd span.info_user {
+	height:43px;
+	line-height: 18px;
+	padding-top: 7px;
+	background: url(images/reg_info2.png) no-repeat;
+	top:3px;
+	left:295px;
+}
+#reg dl dd span.error_user {
+	top:3px;
+	left:295px;
+
+}
+#reg dl dd span.succ_user {
+	top:12px;
+	left:295px;
+
+}
+#reg dl dd span.info_pass {
+	width:244px;
+	height:102px;
+	padding:4px 0 0 16px;
+	background:url(images/reg_info3.png) no-repeat;
+	top:5px;
+	left:295px;
+	letter-spacing:0;
+}
+#reg dl dd span.info_pass p {
+	height:25px;
+	line-height:25px;
+	color:#666;
+}
+#reg dl dd span.info_pass p strong.s {
+	color:#ccc;
+}
+#reg dl dd span.error_pass {
+	top:43px;
+	left:295px;
+
+}
+#reg dl dd span.succ_pass {
+	top:52px;
+	left:295px;
+}
+#reg dl dd span.info_notpass {
+	top:85px;
+	left:295px;
+}
+#reg dl dd span.error_notpass {
+	top:85px;
+	left:295px;
+}
+#reg dl dd span.succ_notpass {
+	top:94px;
+	left:295px;
+}
+#reg dl dd span.info_ans {
+	top:163px;
+	left:295px;
+}
+#reg dl dd span.error_ans {
+	top:163px;
+	left:295px;
+}
+#reg dl dd span.succ_ans {
+	top:172px;
+	left:295px;
+}
+#reg dl dd span.info_email {
+	top:203px;
+	left:295px;
+}
+#reg dl dd span.error_email {
+	top:203px;
+	left:295px;
+}
+#reg dl dd span.succ_email {
+	top:212px;
+	left:295px;
+}
+#reg dl dd ul.all_email {
+	width:180px;
+	height:130px;
+	background:#fff;
+	border:1px solid #ccc;
+	padding:5px 10px;
+	position:absolute;
+	top:233px;
+	left:87px;
+	display:none;
+}
+#reg dl dd ul.all_email li {
+	height:25px;
+	line-height:25px;
+	border-bottom:1px solid #E5EDF2;
+	padding:0 5px;
+	cursor:pointer;
+}
+#reg dl dd.ps {
+	padding:0 0 0 300px;
+}
+#reg dl dd.ps strong.num {
+	padding:0 2px;
+}
+#reg dl dd.ps span.clear {
+	color:#06f;
+	cursor:pointer;
+}
+#reg dl dd span.error_ques {
+	top:123px;
+	left:295px;
+}
+#reg dl dd span.error_birthday {
+	top:241px;
+	left:350px;
+}
+#loading {
+	position:absolute;
+	width:200px;
+	height:40px;
+	background:url(images/login_header.png);
+	border-right:solid 1px #ccc;
+	border-bottom:solid 1px #ccc;
+	display:none;
+	z-index:10000;
+}
+#loading p {
+	height:40px;
+	line-height:40px;
+	background:url(images/loading3.gif) no-repeat 20px center;
+	text-indent:50px;
+	font-size:14px;
+	font-weight:bold;
+	color:#666;
+}
+#success {
+	position:absolute;
+	width:200px;
+	height:40px;
+	background:url(images/login_header.png);
+	border-right:solid 1px #ccc;
+	border-bottom:solid 1px #ccc;
+	display:none;
+	z-index:10000;
+}
+#success p {
+	height:40px;
+	line-height:40px;
+	background:url(images/success.gif) no-repeat 20px center;
+	text-indent:50px;
+	font-size:14px;
+	font-weight:bold;
+	color:#666;
+}
+#nav {
+	width:465px;
+	height:52px;
+	background:url(images/nav_bg.png) no-repeat;
+	margin:50px auto 0 auto;
+	position:relative;
+	cursor:pointer;
+}
+#nav ul {
+	height:52px;
+	cursor:pointer;
+}
+#nav ul li {
+	float: left;
+	width: 85px;
+	height: 52px;
+	line-height: 52px;
+	cursor: pointer;
+	text-align: center;
+	font-weight: bold;
+}
+#nav ul.black {
+	position:absolute;
+	left:20px;
+	z-index:1;
+	color:#333;
+}
+#nav ul.white {
+	width:425px;
+	position:absolute;
+	left:0px;
+	z-index:3;
+	color:#fff;
+}
+#nav ul.about {
+	position:absolute;
+	left:20px;
+	z-index:4;
+	cursor:pointer;
+	background:red;
+	opacity:0;
+	filter:alpha(opacity=0);
+}
+#nav div.nav_bg {
+	width:85px;
+	height:52px;
+	background:url(images/nav_over.png) no-repeat 0px 11px;
+	position:absolute;
+	left:20px;
+	overflow:hidden;
+	cursor:pointer;
+	z-index:2;
+}
+#main {
+	width: 900px;
+	margin: 50px auto;
+}
+#sidebar {
+	width: 250px;
+	height: 500px;
+	float: left;
+}
+#sidebar h2 {
+	width: 248px;
+	height:30px;
+	line-height: 30px;
+	border:1px solid #ccc;
+	background: url(images/side_h.png);
+	text-indent: 10px;
+	margin:0;
+	padding: 0;
+	font-size: 14px;
+	border-bottom: none;
+}
+#sidebar ul {
+	height: 150px;
+	border: 1px solid #ccc;
+	margin :0 0 10px 0;
+	background: #fff;
+	overflow: hidden;
+}
+#sidebar ul li {
+	height: 30px;
+	line-height: 30px;
+	text-decoration: none;
+	background:url(images/arrow4.gif) no-repeat 12px 45%;
+	text-indent: 30px;
+}
+#sidebar ul li a {
+	text-decoration:none;
+	color:#333;
+}
+#sidebar ul li a:hover {
+	text-decoration: underline;
+}
+#index {
+	width:630px;
+	height:570px;
+	float:right;
+	position:relative;
+}
+#index div.content {
+	opacity:0;
+	filter:alpha(opacity=0);
+}
+#index div.content h2 {
+	width:628px;
+	height:30px;
+	line-height:30px;
+	font-size:14px;
+	background:url(images/side_h.png);
+	text-indent:10px;
+	border:1px solid #ccc;
+	border-bottom:none;
+	margin:0;
+}
+#index div.content h2 em {
+	float:right;
+	font-style:normal;
+	font-weight:normal;
+	padding:0 10px 0 0 ;
+}
+#index div.content p {
+	height:130px;
+	line-height:150%;
+	text-indent:26px;
+	padding:10px;
+	border:1px solid #ccc;
+	margin:0 0 10px 0;
+	overflow:hidden;
+	background: #fff;
+}
+#index span.loading {
+	position:absolute;
+	top:260px;
+	left:260px;
+	width:100px;
+	height:20px;
+	background:url(images/loading4.gif) no-repeat;
+}
+#banner {
+	width: 900px;
+	height:150px;
+	margin:10px 0;
+	float: left;
+	position: relative;
+	overflow:hidden;
+}
+#banner img {
+	position: absolute;
+}
+#banner ul {
+	position: absolute;
+	top: 128px;
+	left:420px;
+	z-index:4;
+}
+#banner ul li {
+	float:left;
+	padding:0 5px;
+	color:#999;
+	cursor:pointer;
+	font-size:16px;
+}
+#banner span {
+	width:900px;
+	height:25px;
+	background:#333;
+	position:absolute;
+	top:125px;
+	left:0;
+	opacity:0.3;
+	filter:alpha(opacity=30);
+	z-index:3;
+}
+#banner strong {
+	position:absolute;
+	top:130px;
+	left:10px;
+	color:#fff;
+	z-index:4;
+}
+#photo {
+	width:900px;
+	float:left;
+	background: #fff;
+	padding:10px 0 0 0;
+}
+#photo dl {
+	width:225px;
+	height:270px;
+	float:left;
+	margin:5px 0 15px 0;
+}
+#photo dl dt {
+	width:200px;
+	height:250px;
+	margin:0 auto;
+}
+#photo dl dt img {
+	display:block;
+	cursor:pointer;
+}
+#photo dl dd {
+	height:25px;
+	line-height:25px;
+	text-align:center;
+}
+#photo_big {
+	width:620px;
+	height:511px;
+	border:1px solid #ccc;
+	position:absolute;
+	display:none;
+	z-index:9999;
+	background:#fff;
+}
+#photo_big h2 {
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	font-size:14px;
+	letter-spacing:1px;
+	color:#666;
+	background:url(images/login_header.png) repeat-x;
+	margin:0;
+	padding:0;
+	border-bottom:1px solid #ccc;
+	cursor:move;
+}
+#photo_big h2 img {
+	float:right;
+	position:relative;
+	top:14px;
+	right:8px;
+	cursor:pointer;
+}
+#photo_big .big {
+	width:620px;
+	height:460px;
+	padding:10px 0 0 0;
+	background:#333;
+}
+#photo_big .big img {
+	display:block;
+	margin:0 auto;
+	position:relative;
+	top:190px;
+}
+#photo_big .big strong {
+	display:block;
+	width:100px;
+	height:100px;
+	line-height:100px;
+	text-align:center;
+	background:#000;
+	opacity:0;
+	filter:alpha(opacity=0);
+	font-size:60px;
+	color:#fff;
+	cursor:pointer;
+	position:absolute;
+}
+#photo_big .big strong.sl {
+	top:210px;
+	left:20px;
+}
+#photo_big .big strong.sr {
+	top:210px;
+	right:20px;
+}
+#photo_big .big span {
+	display:block;
+	width:300px;
+	height:450px;
+	background:#000;
+	opacity:0;
+	filter:alpha(opacity=0);
+	position:absolute;
+	cursor:pointer;
+}
+#photo_big .big span.left {
+	top:50px;
+	left:10px;
+}
+#photo_big .big span.right {
+	top:50px;
+	right:10px;
+}
+#photo_big .big em {
+	position:absolute;
+	top:480px;
+	right:20px;
+	color:#fff;
+	font-size:14px;
+	font-style:normal;
+}
+#blog {
+	width:580px;
+	height:320px;
+	border:1px solid #ccc;
+	position:absolute;
+	display:none;
+	z-index:9999;
+	background:#fff;
+}
+#blog h2 {
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	font-size:14px;
+	letter-spacing:1px;
+	color:#666;
+	background:url(images/login_header.png) repeat-x;
+	margin:0;
+	padding:0;
+	border-bottom:1px solid #ccc;
+	cursor:move;
+}
+#blog h2 img {
+	float:right;
+	position:relative;
+	top:14px;
+	right:8px;
+	cursor:pointer;
+}
+#blog div.info {
+	padding:15px 0 5px 0;
+	text-align:center;
+	color:maroon;
+}
+#blog dl {
+	padding:0 0 0 10px;
+}
+#blog dl dd {
+	padding:10px;
+	font-size:14px;
+}
+#blog dl dd input.title {
+	width:200px;
+	height:25px;
+	border:1px solid #ccc;
+	background:#fff;
+	font-size:14px;
+	color:#666;
+}
+#blog dl dd textarea.content {
+	width:360px;
+	height:100px;
+	max-width:360px;
+	max-height:100px;
+	background:#fff;
+	border:1px solid #ccc;
+	color:#666;
+}
+#blog dl dd input.submit {
+	width:107px;
+	height:33px;
+	background:url(images/blog_button.png) no-repeat left;
+	border:none;
+	cursor:pointer;
+}
+#skin {
+	width:650px;
+	height:360px;
+	border:1px solid #ccc;
+	position:absolute;
+	display:none;
+	z-index:9999;
+	background:#fff;
+}
+#skin h2 {
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	font-size:14px;
+	letter-spacing:1px;
+	color:#666;
+	background:url(images/login_header.png) repeat-x;
+	margin:0;
+	padding:0;
+	border-bottom:1px solid #ccc;
+	cursor:move;
+}
+#skin h2 img {
+	float:right;
+	position:relative;
+	top:14px;
+	right:8px;
+	cursor:pointer;
+}
+#skin div.skin_bg  {
+	position:relative;
+}
+#skin div.skin_bg span.loading {
+	display:block;
+	background:url(images/loading4.gif) no-repeat;
+	width:100px;
+	height:20px;
+	position:absolute;
+	top:140px;
+	left:270px
+}
+#skin dl {
+	float:left;
+	padding:12px 0 0 12px;
+}
+#skin dl dt img {
+	display:block;
+	cursor:pointer;
+}
+#skin dl dd {
+	padding:5px;
+	text-align:center;
+	letter-spacing:1px;
+}
+#share {
+	width:210px;
+	height:315px;
+	border:1px solid #ccc;
+	position: absolute;
+	top: 0px;
+	left:-211px;
+	background: #fff;
+}
+#share h2 {
+	height :30px;
+	line-height: 30px;
+	background: #eee;
+	padding: 0;
+	margin: 0;
+	font-size: 14px;
+	color: #666;
+	text-indent: 10px;
+}
+#share ul {
+	padding: 3px 0 2px 5px;
+	height:254px;
+}
+#share ul li {
+	width:96px;
+	height:28px;
+	padding: 2px;
+	float: left;
+}
+#share ul li a {
+	display: block;
+	width: 95px;
+	height:26px;
+	line-height: 26px;
+	text-decoration:none;
+	text-indent: 30px;
+	background-image :url(images/share_bg.png) ;
+	background-repeat: no-repeat;
+	color:#666;
+}
+#share ul li a.a {
+	background-position: 5px 5px;
+}
+#share ul li a.b {
+	background-position: 5px -25px;
+}
+#share ul li a.c {
+	background-position: 5px -55px;
+}
+#share ul li a.d {
+	background-position: 5px -85px;
+}
+#share ul li a.e {
+	background-position: 5px -115px;
+}
+#share ul li a.f {
+	background-position: 5px -145px;
+}
+#share ul li a.g {
+	background-position: 5px -175px;
+}
+#share ul li a.h {
+	background-position: 5px -205px;
+}
+#share ul li a.i {
+	background-position: 5px -235px;
+}
+#share ul li a.j {
+	background-position: 5px -265px;
+}
+#share ul li a.k {
+	background-position: 5px -295px;
+}
+#share ul li a.l {
+	background-position: 5px -325px;
+}
+#share ul li a.m {
+	background-position: 5px -355px;
+}
+#share ul li a.n {
+	background-position: 5px -385px;
+}
+#share ul li a.o {
+	background-position: 5px -415px;
+}
+#share ul li a.p {
+	background-position: 5px -445px;
+}
+#share ul li a:hover {
+	opacity: 0.7;
+	filter: alpha(opacity=70);
+	background-color: #eee;
+	color: #06f;
+}
+#share .share_footer {
+	height:26px;
+	background: #eee;
+	position: relative;
+}
+#share .share_footer a {
+	position: absolute;
+	top: 7px;
+	left:140px;
+	background: #eee url(images/share_bg.png) no-repeat 0 -477px;
+	text-decoration: none;
+	padding: 0 0 0 13px;
+	color: #666;
+}
+#share .share_footer a:hover {
+	color:#06f;
+	opacity: 0.7;
+	filter: alpha(opacity=70);
+}
+#share .share_footer span {
+	display: block;
+	width: 24px;
+	height: 88px;
+	position: absolute;
+	top:-230px;
+	left: 210px;
+	background: url(images/share.png)no-repeat;
+	cursor: pointer;
+}
