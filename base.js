@@ -224,6 +224,7 @@ Base.prototype.removeRule = function (num, index) {
 	return this;
 }
 
+
 //获取某个节点在某组的位置
 Base.prototype.index = function () {
 	var children = this.elements[0].parentNode.children;
